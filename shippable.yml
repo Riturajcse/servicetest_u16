@@ -31,6 +31,8 @@ build:
     - echo SHIPPABLE_REDIS_BINARY=$SHIPPABLE_REDIS_BINARY
     - echo SHIPPABLE_RETHINKDB_BINARY=$SHIPPABLE_RETHINKDB_BINARY
     - echo SHIPPABLE_SELENIUM_v=$SHIPPABLE_SELENIUM_BINARY    
+    - echo SHIPPABLE_SQLITE_BINARY=$SHIPPABLE_SQLITE_BINARY
+
     - cassandra -v
     #- elasticsearch -v
     - memcached -V
@@ -46,6 +48,7 @@ build:
     - which mysql
     - $SHIPPABLE_MYSQL_BINARY --version || true
     - mysql -V || true
+    - which sqlite3 || true
     - sqlite3 -version || true
     - rabbitmqctl status || true
     # elastic search version
