@@ -37,15 +37,23 @@ build:
     #- mongod -v
     - psql --version
     - redis-server -v
-    - riak version    
+    - riak version
     - rethinkdb -v || true
-    - couchdb -v || true
-    - neo4j -v || true
+    # couchdb version
+    - curl http://localhost:5984
+    - $SHIPPABLE_NEO4J_BINARY -v || true
+    - $SHIPPABLE_MONGODB_BINARY || true
     - apt search mongodb-org 
+    - which mysql
+    - $SHIPPABLE_MYSQL_BINARY -v || true
     - mysql -V || true
     - rabbitmq -q || true
+    - which sqlite3 || true
+    - apt search sqlite3 || true
     - sqlite3 -v || true
-    #- ./serviceversion.sh
+    - rabbitmqctl status || true
+    # elastic search version
+    - curl -XGET 'localhost:9200'
         
   pre_ci_boot:
     image_name: drydock/u16all
