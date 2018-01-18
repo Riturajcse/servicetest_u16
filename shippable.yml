@@ -38,6 +38,13 @@ build:
     - psql --version
     - redis-server -v
     - riak version    
+    - rethinkdb -v || true
+    - couchdb -v || true
+    - neo4j -v || true
+    - apt search mongodb-org 
+    - mysql -V || true
+    - rabbitmq -q || true
+    - sqlite3 -v || true
     #- ./serviceversion.sh
         
   pre_ci_boot:
