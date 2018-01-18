@@ -41,16 +41,12 @@ build:
     - rethinkdb -v || true
     # couchdb version
     - curl http://localhost:5984
-    - $SHIPPABLE_NEO4J_BINARY -v || true
+    - $SHIPPABLE_NEO4J_BINARY version || true
     - $SHIPPABLE_MONGODB_BINARY || true
-    - apt search mongodb-org 
     - which mysql
-    - $SHIPPABLE_MYSQL_BINARY -v || true
+    - $SHIPPABLE_MYSQL_BINARY -V || true
     - mysql -V || true
-    - rabbitmq -q || true
-    - which sqlite3 || true
-    - apt search sqlite3 || true
-    - sqlite3 -v || true
+    - sqlite3 -version || true
     - rabbitmqctl status || true
     # elastic search version
     - curl -XGET 'localhost:9200'
