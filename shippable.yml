@@ -44,7 +44,7 @@ build:
     - $SHIPPABLE_NEO4J_BINARY version || true
     - $SHIPPABLE_MONGODB_BINARY || true
     - which mysql
-    - $SHIPPABLE_MYSQL_BINARY -V || true
+    - $SHIPPABLE_MYSQL_BINARY --version || true
     - mysql -V || true
     - sqlite3 -version || true
     - rabbitmqctl status || true
