@@ -53,7 +53,7 @@ build:
     - rabbitmqctl status || true
     - curl -XGET 'localhost:9200'
         
-  pre_ci_boot:
-    image_name: drydock/u16all
-    image_tag: master
-    pull: true    
+  #pre_ci_boot:
+    #image_name: drydock/u16all
+    #image_tag: master
+    #pull: true    
