@@ -34,14 +34,11 @@ build:
     - echo SHIPPABLE_SQLITE_BINARY=$SHIPPABLE_SQLITE_BINARY
 
     - cassandra -v
-    #- elasticsearch -v
     - memcached -V
-    #- mongod -v
     - psql --version
     - redis-server -v
     - riak version
     - rethinkdb -v || true
-    # couchdb version
     - curl http://localhost:5984
     - $SHIPPABLE_NEO4J_BINARY version || true
     - $SHIPPABLE_MONGODB_BINARY || true
@@ -51,7 +48,6 @@ build:
     - which sqlite3 || true
     - sqlite3 -version || true
     - rabbitmqctl status || true
-    # elastic search version
     - curl -XGET 'localhost:9200'
         
   pre_ci_boot:
