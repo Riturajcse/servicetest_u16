@@ -4,12 +4,9 @@ node_js:
   - 9
 
 services:
-  - couchdb
-  - elasticsearch 
   - memcached 
   - mongodb 
   - neo4j 
-  - postgres 
   - rabbitmq 
   - redis 
   - selenium
@@ -24,19 +21,15 @@ build:
 
   ci:
     - node --version    
-    - echo SHIPPABLE_COUCHDB_BINARY=$SHIPPABLE_COUCHDB_BINARY
-    - echo SHIPPABLE_ES_BINARY=$SHIPPABLE_ES_BINARY
     - echo SHIPPABLE_MEMCACHED_BINARY=$SHIPPABLE_MEMCACHED_BINARY
     - echo SHIPPABLE_MONGODB_BINARY=$SHIPPABLE_MONGODB_BINARY
     - echo SHIPPABLE_NEO4J_BINARY=$SHIPPABLE_NEO4J_BINARY
-    - echo SHIPPABLE_POSTGRES_BINARY=$SHIPPABLE_POSTGRES_BINARY
     - echo SHIPPABLE_RABBITMQ_BINARY=$SHIPPABLE_RABBITMQ_BINARY
     - echo SHIPPABLE_REDIS_BINARY=$SHIPPABLE_REDIS_BINARY
     - echo SHIPPABLE_SELENIUM_v=$SHIPPABLE_SELENIUM_BINARY    
     - echo SHIPPABLE_SQLITE_BINARY=$SHIPPABLE_SQLITE_BINARY
 
     - memcached -V
-    - psql --version 
     - redis-server -v
     - curl http://localhost:5984
     - $SHIPPABLE_NEO4J_BINARY version || true
