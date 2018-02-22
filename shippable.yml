@@ -1,4 +1,6 @@
-language: node
+language: nodejs
+
+
 
 services:
   - couchdb
