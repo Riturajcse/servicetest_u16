@@ -15,7 +15,7 @@ services:
 build:
             
   pre_ci_boot:
-    image_name: drydockaarch64/u16all
+    image_name: drydock/c7all
     image_tag: master
     pull: true    
 
