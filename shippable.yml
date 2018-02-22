@@ -1,8 +1,5 @@
-language: java
+language: node
 
-jdk:
-  - openjdk8
-  
 services:
   - couchdb
   - elasticsearch 
